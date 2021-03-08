@@ -1,5 +1,6 @@
 import Head from "next/head";
 import blogPosts from "../lib/data";
+import ListBlogItem from "./components/ListBlogItem";
 import Link from "next/link";
 import {
   Text,
@@ -22,18 +23,13 @@ export default function Home() {
 
       <VStack spacing={4}>
         {blogPosts.map((item) => (
-          <div key={item.slug}>
-            <div>
-              <Link href={`/blog/${item.slug}`}>
-                <Heading cursor="pointer">{item.title}</Heading>
-              </Link>
-              <Divider />
-            </div>
-            <Text fontSize="sm" mb={3}>
-              {item.date.toLocaleString()}
-            </Text>
-            <Text>{item.content}</Text>
-          </div>
+          <ListBlogItem
+            key={item.slug}
+            slug={item.slug}
+            title={item.title}
+            date={item.date}
+            content={item.content}
+          />
         ))}
       </VStack>
     </Container>
