@@ -1,17 +1,18 @@
 import Head from "next/head";
 import blogPosts from "../lib/data";
 import Link from "next/link";
+import { Text, Heading, Flex, Stack, Container } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <div>
+    <Container maxW="container.md">
       <Head>
         <title>Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <h1>blog</h1>
-      </main>
+      <Flex justify="center">
+        <Heading>My Blog</Heading>
+      </Flex>
 
       <div>
         {blogPosts.map((item) => (
@@ -26,6 +27,6 @@ export default function Home() {
           </div>
         ))}
       </div>
-    </div>
+    </Container>
   );
 }
