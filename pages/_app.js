@@ -13,6 +13,7 @@ import {
   MenuIcon,
   MenuCommand,
   MenuDivider,
+  Heading,
 } from "@chakra-ui/react";
 import { VscFoldDown } from "react-icons/vsc";
 
@@ -33,6 +34,9 @@ function MyApp({ Component, pageProps }) {
             </MenuItem>
           </MenuList>
         </Menu>
+        <Link href="/">
+          <Heading cursor="pointer">XD Blog</Heading>
+        </Link>
         <DarkModeSwitch />
       </Flex>
       <Component {...pageProps} />

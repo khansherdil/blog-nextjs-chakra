@@ -1,19 +1,28 @@
 import Head from "next/head";
 import blogPosts from "../../lib/data";
+import {
+  Heading,
+  Text,
+  Container,
+  VStack,
+  Stack,
+  Divider,
+} from "@chakra-ui/react";
 
 export default function BlogPage({ title, date, content }) {
   return (
-    <div>
+    <Container maxW="container.md">
       <Head>
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <h1>1st {title}</h1>
-        <p>{date}</p>
+      <Stack>
+        <Heading size="xl">{title}</Heading>
+        <Divider />
+        <Text fontSize="sm">{date}</Text>
         <div>{content}</div>
-      </main>
-    </div>
+      </Stack>
+    </Container>
   );
 }
 
